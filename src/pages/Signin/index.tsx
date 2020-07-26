@@ -8,13 +8,12 @@ import logoImg from '../../assets/logo.svg';
 import { Container, Content, Background } from './styles';
 import Input from '../../components/Input/index';
 import Button from '../../components/Button/index';
-import AuthContext from '../../context/AuthContext';
+import { AuthContext } from '../../context/AuthContext';
 
 const Signin: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
 
-  const auth = useContext(AuthContext);
-  console.log(auth);
+  const { signIn } = useContext(AuthContext);
 
   const handleSubmit = useCallback(async (data: object) => {
     try {
