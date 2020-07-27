@@ -8,7 +8,7 @@ import logoImg from '../../assets/logo.svg';
 import { Container, Content, Background } from './styles';
 import Input from '../../components/Input/index';
 import Button from '../../components/Button/index';
-import { useAuth } from '../../hooks/AuthContext';
+import { useAuth } from '../../hooks/auth';
 
 interface SignInFormData {
   email: string;
