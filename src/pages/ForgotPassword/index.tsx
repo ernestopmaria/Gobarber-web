@@ -11,6 +11,7 @@ import Input from '../../components/Input/index';
 import Button from '../../components/Button/index';
 
 import { useToast } from '../../hooks/toast';
+import api from '../../services/api';
 
 interface ForgotPasswordFormData {
   email: string;
@@ -33,8 +34,13 @@ const ForgotPassword: React.FC = () => {
         });
         await schema.validate(data, { abortEarly: false });
 
-        // reqcuperação de senha
-        // history.push('/dashboard');
+        await api.post('/password/forgot', { email: data.email });
+        addToast({
+          type: 'success',
+          title: 'E-mail de recuperação enviado com sucesso',
+          description:
+            'Enviamos um E-mail para confirmar a recuperação de senha, cheque sua caixa de entrada',
+        });
       } catch (err) {
         if (err instanceof Yup.ValidationError) {
           const errors = getValidationErrors(err);
