@@ -162,7 +162,8 @@ export const Appointment = styled.div`
     margin-left: auto;
     display: flex;
     align-items: center;
-    color: #999591;
+    color: #f4ede8;
+    width: 70px;
 
     svg {
       color: #ff9000;
@@ -193,7 +194,7 @@ export const Appointment = styled.div`
 `;
 
 export const Calendar = styled.aside`
-  width: 380px;
+  width: 400px;
 
   .DayPicker {
     background: #28262e;
@@ -206,7 +207,7 @@ export const Calendar = styled.aside`
 
   .DayPicker,
   .DayPicker-Month {
-    width: 100%;
+    width: 94%;
   }
 
   .DayPicker-Month {
